@@ -45,14 +45,14 @@ const ErrorBoundaryMount: React.FC<{
 };
 
 /**
- * Patch Discord's ErrorBoundary.render to return ShiggyCord's custom screen.
+ * Patch Discord's ErrorBoundary.render to return discordplus's custom screen.
  * Add defensive logging and fallback behavior so the patch won't break startup
  * if lookup fails. Also register lightweight global handlers to capture
  * uncaught errors for debugging.
  */
 export default function patchErrorBoundary() {
   try {
-    console.log("[ShiggyCord] patchErrorBoundary: registering");
+    console.log("[discordplus] patchErrorBoundary: registering");
   } catch {}
 
   // Attempt to attach after the ErrorBoundary render. If the context lookup
@@ -61,7 +61,7 @@ export default function patchErrorBoundary() {
   const ctxPromise = getErrorBoundaryContext().catch((err) => {
     try {
       console.warn(
-        "[ShiggyCord] patchErrorBoundary: context lookup failed",
+        "[discordplus] patchErrorBoundary: context lookup failed",
         err,
       );
     } catch {}
@@ -76,7 +76,7 @@ export default function patchErrorBoundary() {
 
       try {
         console.log(
-          "[ShiggyCord] patchErrorBoundary: rendering custom error screen",
+          "[discordplus] patchErrorBoundary: rendering custom error screen",
           this.state.error,
         );
       } catch {}
@@ -101,7 +101,7 @@ export default function patchErrorBoundary() {
     } catch (e) {
       try {
         console.error(
-          "[ShiggyCord] patchErrorBoundary: error while rendering custom screen",
+          "[discordplus] patchErrorBoundary: error while rendering custom screen",
           e,
         );
       } catch {}
@@ -127,7 +127,7 @@ export default function patchErrorBoundary() {
             null;
           ErrorUtils.setGlobalHandler((err: any, isFatal?: boolean) => {
             try {
-              console.error("[ShiggyCord] global uncaught error:", err, {
+              console.error("[discordplus] global uncaught error:", err, {
                 isFatal,
               });
               (window as any).__SHIGGY_LAST_UNCAUGHT_ERROR = err;
@@ -145,7 +145,7 @@ export default function patchErrorBoundary() {
           g.addEventListener("unhandledrejection", (ev: any) => {
             try {
               console.error(
-                "[ShiggyCord] unhandledrejection:",
+                "[discordplus] unhandledrejection:",
                 ev?.reason ?? ev,
               );
               (window as any).__SHIGGY_LAST_UNCAUGHT_ERROR = ev?.reason ?? ev;

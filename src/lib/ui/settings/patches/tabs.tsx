@@ -47,23 +47,23 @@ export function patchTabsUI(unpatches: (() => void | boolean)[]) {
       ...rendererConfigValue,
       VendettaCustomPage: {
         type: "route",
-        title: () => "ShiggyCord",
+        title: () => "discordplus",
         screen: {
           route: "VendettaCustomPage",
           getComponent: () => CustomPageRenderer,
         },
       },
-      SHIGGYCORD_CUSTOM_PAGE: {
+      discordplus_CUSTOM_PAGE: {
         type: "route",
-        title: () => "ShiggyCord",
+        title: () => "discordplus",
         screen: {
-          route: "SHIGGYCORD_CUSTOM_PAGE",
+          route: "discordplus_CUSTOM_PAGE",
           getComponent: () => CustomPageRenderer,
         },
       },
       BUNNY_CUSTOM_PAGE: {
         type: "route",
-        title: () => "ShiggyCord",
+        title: () => "discordplus",
         screen: {
           route: "BUNNY_CUSTOM_PAGE",
           getComponent: () => CustomPageRenderer,

@@ -20,12 +20,12 @@
       {
         "assets": [
           {
-            "path": "dist/shiggycord.js",
-            "label": "ShiggyCord Bundle"
+            "path": "dist/discordplus.js",
+            "label": "discordplus Bundle"
           },
           {
-            "path": "dist/shiggycord.min.js",
-            "label": "ShiggyCord Bundle (minified)"
+            "path": "dist/discordplus.min.js",
+            "label": "discordplus Bundle (minified)"
           }
         ]
       }

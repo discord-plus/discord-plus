@@ -230,8 +230,8 @@ export default function Developer() {
                       onChange={(v: string) =>
                         (loaderConfig.customLoadUrl.url = v)
                       }
-                      placeholder="http://localhost:4040/shiggycord.js"
-                      label={Strings.SHIGGYCORD_URL}
+                      placeholder="http://localhost:4040/discordplus.js"
+                      label={Strings.discordplus_URL}
                     />
                   }
                 />
@@ -247,7 +247,7 @@ export default function Developer() {
               icon={<TableRow.Icon source={findAssetId("ic_image")} />}
               trailing={TableRow.Arrow}
               onPress={() =>
-                navigation.push("SHIGGYCORD_CUSTOM_PAGE", {
+                navigation.push("discordplus_CUSTOM_PAGE", {
                   title: Strings.ASSET_BROWSER,
                   render: AssetBrowser,
                 })
@@ -313,12 +313,12 @@ export default function Developer() {
                   },
                   options: [
                     {
-                      label: Strings.SHIGGYCORD,
+                      label: Strings.discordplus,
                       onPress: () =>
-                        navigation.push("SHIGGYCORD_CUSTOM_PAGE", {
+                        navigation.push("discordplus_CUSTOM_PAGE", {
                           render: () => (
                             <ErrorBoundaryScreen
-                              error={new Error("ShiggyCord test crash")}
+                              error={new Error("discordplus test crash")}
                               rerender={() => {}}
                             />
                           ),
@@ -328,7 +328,7 @@ export default function Developer() {
                       label: "Discord",
                       isDestructive: true,
                       onPress: () =>
-                        navigation.push("SHIGGYCORD_CUSTOM_PAGE", {
+                        navigation.push("discordplus_CUSTOM_PAGE", {
                           noErrorBoundary: true,
                         }),
                     },
@@ -354,7 +354,7 @@ export default function Developer() {
               icon={<TableRow.Icon source={findAssetId("TrashIcon")} />}
               onPress={() => {
                 openAlert(
-                  "shiggycord-clear-bundle-reload-confirmation",
+                  "discordplus-clear-bundle-reload-confirmation",
                   <AlertModal
                     title={Strings.MODAL_RELOAD_REQUIRED}
                     content={Strings.MODAL_RELOAD_REQUIRED_DESC}
