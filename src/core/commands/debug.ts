@@ -20,13 +20,13 @@ export default () =>
     execute([ephemeral], ctx) {
       const info = getDebugInfo();
       const content = [
-        "**معلومات ديسكورد بلس**",
-        `> اصدار ديسكورد بلس: ${info.bunny.version} (${info.bunny.loader.name} ${info.bunny.loader.version})`,
-        `> ديسكورد: ${info.discord.version} (${info.discord.build})`,
-        `> رياكت: ${info.react.version} (RN ${info.react.nativeVersion})`,
-        `> هيرميس: ${info.hermes.version} (bcv${info.hermes.bytecodeVersion})`,
-        `> النظام: ${info.os.name} ${info.os.version} ${info.os.sdk ? `(SDK ${info.os.sdk})` : ""}`.trimEnd(),
-        `> الجهاز: ${info.device.model}`,
+        "**Discord Plus Debug Info**",
+        `> Discord Plus: ${info.bunny.version} (${info.bunny.loader.name} ${info.bunny.loader.version})`,
+        `> Discord: ${info.discord.version} (${info.discord.build})`,
+        `> React: ${info.react.version} (RN ${info.react.nativeVersion})`,
+        `> Hermes: ${info.hermes.version} (bcv${info.hermes.bytecodeVersion})`,
+        `> System: ${info.os.name} ${info.os.version} ${info.os.sdk ? `(SDK ${info.os.sdk})` : ""}`.trimEnd(),
+        `> Device: ${info.device.model}`,
       ].join("\n");
 
         if (ephemeral?.value) {
