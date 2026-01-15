@@ -1,4 +1,4 @@
-import discordplusIcon from "@assets/icons/shiggy.png";
+import discordplusIcon from "@assets/icons/discordplus.png";
 import { Strings } from "@core/i18n";
 import { useProxy } from "@core/vendetta/storage";
 import { findAssetId } from "@lib/api/assets";
